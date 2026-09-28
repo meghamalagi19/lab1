@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Megha's Dreamy World 🌙</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: "Trebuchet MS", cursive;
+            background: linear-gradient(
+                to bottom,
+                #08001a,
+                #16002f,
+                #26004d,
+                #120025
+            );
+            color: #ff9dcc;
+            position: relative;
+        }
+
+        /* =========================
+           MOON
+        ========================== */
+
+        .moon {
+            position: absolute;
+            top: 70px;
+            right: 12%;
+            width: 150px;
+            height: 150px;
+            background: #fff9f0;
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 20px #ffffff,
+                0 0 50px #ffd6ec,
+                0 0 100px #ffb6d9;
+
+            animation: moonGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes moonGlow {
+            0%, 100% {
+                box-shadow:
+                    0 0 20px #ffffff,
+                    0 0 50px #ffd6ec,
+                    0 0 100px #ffb6d9;
+            }
+
+            50% {
+                box-shadow:
+                    0 0 35px #ffffff,
+                    0 0 70px #ffd6ec,
+                    0 0 130px #ffb6d9;
+            }
+        }
+
+        /* Moon craters */
+
+        .crater {
+            position: absolute;
+            background: #eee2df;
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+
+        .crater1 {
+            width: 25px;
+            height: 25px;
+            top: 30px;
+            left: 35px;
+        }
+
+        .crater2 {
+            width: 18px;
+            height: 18px;
+            top: 80px;
+            left: 80px;
+        }
+
+        .crater3 {
+            width: 12px;
+            height: 12px;
+            top: 50px;
+            right: 30px;
+        }
+
+        /* =========================
+           STARS
+        ========================== */
+
+        .star {
+            position: absolute;
+            color: white;
+            font-size: 20px;
+            animation: twinkle 2s infinite ease-in-out;
+        }
+
+        .star:nth-child(1) {
+            top: 10%;
+            left: 10%;
+        }
+
+        .star:nth-child(2) {
+            top: 25%;
+            left: 25%;
+            animation-delay: .5s;
+        }
+
+        .star:nth-child(3) {
+            top: 15%;
+            left: 55%;
+            animation-delay: 1s;
+        }
+
+        .star:nth-child(4) {
+            top: 35%;
+            left: 75%;
+            animation-delay: 1.5s;
+        }
+
+        .star:nth-child(5) {
+            top: 55%;
+            left: 10%;
+            animation-delay: .7s;
+        }
+
+        .star:nth-child(6) {
+            top: 65%;
+            left: 85%;
+            animation-delay: 1.2s;
+        }
+
+        .star:nth-child(7) {
+            top: 75%;
+            left: 40%;
+            animation-delay: .3s;
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.2;
+                transform: scale(0.7);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+        /* =========================
+           MAIN CARD
+        ========================== */
+
+        .container {
+            width: 85%;
+            max-width: 850px;
+            margin: 80px auto;
+            padding: 50px 40px;
+
+            background: rgba(20, 0, 45, 0.65);
+            backdrop-filter: blur(10px);
+
+            border: 2px solid #ff77b7;
+            border-radius: 35px;
+
+            text-align: center;
+
+            box-shadow:
+                0 0 20px #ff4fa3,
+                inset 0 0 30px rgba(255, 105, 180, 0.1);
+
+            position: relative;
+            z-index: 5;
+        }
+
+        /* =========================
+           HEADING
+        ========================== */
+
+        h1 {
+            font-size: 48px;
+            color: #ff8fc8;
+
+            text-shadow:
+                0 0 10px #ff4fa3,
+                0 0 25px #ff77b7,
+                0 0 50px #ffb6d9;
+
+            margin-bottom: 35px;
+
+            animation: titleGlow 3s infinite;
+        }
+
+        @keyframes titleGlow {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.03);
+            }
+        }
+
+        /* =========================
+           TEXT
+        ========================== */
+
+        .line {
+            color: #ff9dcc;
+            font-size: 20px;
+            line-height: 1.8;
+            margin: 20px 0;
+
+            opacity: 0;
+            transform: translateY(25px);
+
+            animation: appear 1s forwards;
+        }
+
+        .line:nth-of-type(1) {
+            animation-delay: 1s;
+        }
+
+        .line:nth-of-type(2) {
+            animation-delay: 2s;
+        }
+
+        .line:nth-of-type(3) {
+            animation-delay: 3s;
+        }
+
+        .line:nth-of-type(4) {
+            animation-delay: 4s;
+        }
+
+        .line:nth-of-type(5) {
+            animation-delay: 5s;
+        }
+
+        .line:nth-of-type(6) {
+            animation-delay: 6s;
+        }
+
+        @keyframes appear {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .pink {
+            color: #ff69b4;
+            font-weight: bold;
+
+            text-shadow:
+                0 0 8px #ff4fa3;
+        }
+
+        /* =========================
+           HOBBIES
+        ========================== */
+
+        .hobbies {
+            margin-top: 35px;
+        }
+
+        .hobbies h2 {
+            color: #ff8fc8;
+            margin-bottom: 20px;
+
+            text-shadow:
+                0 0 10px #ff4fa3;
+        }
+
+        .hobby-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .hobby {
+            padding: 12px 20px;
+            border: 1px solid #ff77b7;
+            border-radius: 25px;
+
+            color: #ffb4d8;
+            background: rgba(255, 105, 180, 0.08);
+
+            box-shadow:
+                0 0 12px rgba(255, 105, 180, 0.4);
+
+            transition: 0.3s;
+        }
+
+        .hobby:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: rgba(255, 105, 180, 0.2);
+
+            box-shadow:
+                0 0 25px #ff69b4;
+        }
+
+        /* =========================
+           FLOATING FLOWERS
+        ========================== */
+
+        .flower {
+            position: fixed;
+            bottom: -50px;
+            color: white;
+            font-size: 30px;
+
+            animation: floatFlower 10s linear infinite;
+
+            z-index: 2;
+        }
+
+        .f1 {
+            left: 8%;
+            animation-delay: 1s;
+        }
+
+        .f2 {
+            left: 30%;
+            animation-delay: 4s;
+        }
+
+        .f3 {
+            left: 55%;
+            animation-delay: 2s;
+        }
+
+        .f4 {
+            left: 80%;
+            animation-delay: 6s;
+        }
+
+        .f5 {
+            left: 95%;
+            animation-delay: 8s;
+        }
+
+        @keyframes floatFlower {
+
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                transform:
+                    translateY(-110vh)
+                    rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* =========================
+           SHOOTING STAR
+        ========================== */
+
+        .shooting-star {
+            position: fixed;
+            top: 20%;
+            left: -100px;
+            width: 100px;
+            height: 2px;
+
+            background: linear-gradient(
+                to right,
+                transparent,
+                #ffffff,
+                #ff9dcc
+            );
+
+            transform: rotate(-25deg);
+
+            animation: shooting 6s linear infinite;
+        }
+
+        @keyframes shooting {
+
+            0% {
+                left: -150px;
+                top: 15%;
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            30% {
+                left: 110%;
+                top: 60%;
+                opacity: 0;
+            }
+
+            100% {
+                left: 110%;
+                opacity: 0;
+            }
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            margin-top: 40px;
+
+            color: #ff8fc8;
+
+            font-size: 17px;
+
+            text-shadow:
+                0 0 10px #ff4fa3;
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 600px) {
+
+            .container {
+                width: 92%;
+                padding: 35px 20px;
+                margin: 50px auto;
+            }
+
+            h1 {
+                font-size: 35px;
+            }
+
+            .line {
+                font-size: 17px;
+            }
+
+            .moon {
+                width: 100px;
+                height: 100px;
+                right: 8%;
+                top: 30px;
+            }
+
+            .crater1 {
+                width: 18px;
+                height: 18px;
+            }
+
+            .crater2 {
+                width: 13px;
+                height: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 🌙 Moon -->
+    <div class="moon">
+        <div class="crater crater1"></div>
+        <div class="crater crater2"></div>
+        <div class="crater crater3"></div>
+    </div>
+
+
+    <!-- ✨ Stars -->
+    <div class="star">✦</div>
+    <div class="star">✧</div>
+    <div class="star">✨</div>
+    <div class="star">✦</div>
+    <div class="star">✧</div>
+    <div class="star">✨</div>
+    <div class="star">✦</div>
+
+
+    <!-- 🌠 Shooting Star -->
+    <div class="shooting-star"></div>
+
+
+    <!-- 🌸 Floating White Flowers -->
+    <div class="flower f1">❀</div>
+    <div class="flower f2">✿</div>
+    <div class="flower f3">❀</div>
+    <div class="flower f4">✿</div>
+    <div class="flower f5">❀</div>
+
+
+    <!-- 💗 Main Content -->
+    <div class="container">
+
+        <h1>🌙 Welcome to Megha's World ✨</h1>
+
+
+        <p class="line">
+            🌸 Hello! My name is
+            <span class="pink">Megha</span>.
+        </p>
+
+
+        <p class="line">
+            🎓 I am currently pursuing my
+            <span class="pink">B.Tech degree</span>.
+        </p>
+
+
+        <p class="line">
+            📚 I am very interested in
+            <span class="pink">Teaching</span>
+            and I would love to become a teacher.
+        </p>
+
+
+        <p class="line">
+            💙 My favourite colour is
+            <span class="pink">Blue</span>.
+        </p>
+
+
+        <p class="line">
+            🦋 I am a super active person who is always
+            <span class="pink">laughing, talking and spreading happiness!</span>
+        </p>
+
+
+        <p class="line">
+            🌙 Just like the moon, I love to dream,
+            learn and shine in my own beautiful way.
+        </p>
+
+
+        <!-- Hobbies -->
+
+        <div class="hobbies">
+
+            <h2>🌷 My Hobbies 🌷</h2>
+
+            <div class="hobby-list">
+
+                <div class="hobby">
+                    😴 Sleeping
+                </div>
+
+                <div class="hobby">
+                    🍕 Eating
+                </div>
+
+                <div class="hobby">
+                    🎨 Drawing
+                </div>
+
+                <div class="hobby">
+                    💃 Dancing
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <footer>
+            ✨ Keep dreaming • Keep smiling • Keep shining ✨
+            <br><br>
+            🌙 Made with love by Megha 💗
+        </footer>
+
+    </div>
+
+</body>
+</html>
